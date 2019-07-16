@@ -11,6 +11,13 @@
 <body onload="generate()">
     <div class="main">
         <h1>Super Mario Maker Idea Generator</h1>
+        <p class= "gameSelection">What game are you playing ?</p>
+        <div class="selectContainer">
+            <select id="gameSelector" onchange="toggleGame()">
+                 <option value="SMM1">Super Mario Maker</option>
+                 <option value="SMM2">Super Mario Maker 2</option>
+            </select>
+        </div>
         <p class="intro">How about:</p>
 
         <div class="idea">
