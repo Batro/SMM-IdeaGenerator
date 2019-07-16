@@ -25,7 +25,7 @@ var smm2OnlyObjects = ["10-Coins", "30-Coins", "50-Coins", "Dry Bones Shells", "
 var smm2OnlyMechanics = ["ON-OFF Switches", "Snake Blocks", "Fast Snake Blocks"]
 var sm3wObjects = ["Blocks", "Bullet Bills", "Fireflowers", "Stars", "Super Bells", "Super Hammer", "Mushrooms", "Coins", "Springboards", "Goombas", "Koopas", "Ant Troopers", "Horned Ant Troopers", "Spinys", "Bloopers", "Cheep Cheeps",
 "Skipsqueaks", "Spiny Skipsqueak", "Stingby", "Piranha Plants", "Fire Piranha Plants", "Piranha Creepers", "Thwomps", "Hammer Bros", "Fire Bros", "Hop Chops", "Boos",
-"Peepas", "Lava Bubbles", "Bob-ombs", "Dry Bones", "Fish Bones", "Magikoopas", "Meowser", "Boom Booms", "Pom Poms", "Charvaarghs", "Bullys", "Porcupffers", "Koopa Car", "Bill Blasters", "Banzai Bills", "Icicle", "Twisters", 
+"Peepas", "Podoboos", "Bob-ombs", "Dry Bones", "Fish Bones", "Kameks", "Meowser", "Boom Booms", "Pom Poms", "Charvaarghs", "Bullys", "Porcupffers", "Koopa Car", "Bill Blasters", "Banzai Bills", "Icicle", "Twisters",
 "POW-Blocks", "P Switches", "Cloud Lifts", "! Blocks"];
 var sm3wMechanics = ["ON-OFF Switches", "Snake Blocks", "Fast Snake Blocks", "Pipes", "Clear Pipes", "Spike Blocks", "Doors", "Trees", "Conveyors Belts", "Track Blocks", "Blinking Blocks", "Mushroom Trampolines", "Warp Boxes"];
 var smm2smbOnlyObjects = ["Superball Flowers"];
@@ -58,9 +58,12 @@ function toggleType() {
 }
 
 function generate() {
-    if (game == "SMM2") {
+    if (game === "SMM2") {
         allStyles = style.concat(smm2OnlyStyles);
         allEnvironments = environents.concat(smm2OnlyEnvironments);
+    } else {
+        allStyles = style;
+        allEnvironments = environents;
     }
     var outputStyleElement = document.getElementById("ideaStyle");
     var styleId = getRandom(0, allStyles.length - 1);
