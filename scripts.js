@@ -72,7 +72,7 @@ function generate() {
 
     var outputTypeElement = document.getElementById("ideaType");
     if (document.getElementById("checkboxType").checked === true) {
-        outputTypeElement.innerHTML = getEnvironment();
+        outputTypeElement.innerHTML = getEnvironment(styleId);
     } else {
         outputTypeElement.parentElement.className = "ideaDis";
     }
@@ -121,9 +121,9 @@ function getStyle(styleId) {
     return output;
 }
 
-function getEnvironment() {
+function getEnvironment(styleId) {
     var output = "";
-    if (game === "SMM2") {
+    if ((game === "SMM2") && (styleId !== 4)){
         if (getRandom(1, 2) === 1) {
             output = output.concat("Day ");
         } else {
